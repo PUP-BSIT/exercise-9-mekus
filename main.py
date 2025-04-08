@@ -120,7 +120,7 @@ def main():
             case 3:
                 update_record(record_list)
             case 4: 
-                pass
+                delete_record(record_list)
             case 5:
                 # Call search_record()
                 search_record(record_list)
