@@ -46,7 +46,8 @@ def update_record(record_list):
     
     # Iterates the keys in the selected record
     for key in selected_record:
-        selected_record[key] = input(f"Enter {key.replace('_', ' ')}: ")
+        user_input = input(f"Enter {key.replace('_', ' ').title()}: ")
+        selected_record[key] = user_input
 
 # TODO: Implement a function to delete a record 
 # ASSIGNED TO: Jermaine Raz ehl Agulto
