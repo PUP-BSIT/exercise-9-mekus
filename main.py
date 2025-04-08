@@ -39,8 +39,29 @@ def add_record(record_list):
 # TODO: Implement a function to delete a record 
 # ASSIGNED TO: Jermaine Raz ehl Agulto
 
-# TODO: Implement a function to search for a record
-# ASSIGNED TO: Joshua Serohijos
+def search_record(record_list):
+    print("\n--- Search a Record by ID ---") # Display section title
+    
+    # Prompt user to enter a record ID to search
+    record_id = int(input("Enter the record ID to search: "))
+
+    # Check if the input is a number
+    if not record_id:
+        print("Invalid input! Please enter a valid number.")
+        return
+
+    # Convert record ID to index
+    index = record_id - 1
+
+    # Check if the index is out of range
+    if index < 0 or index >= len(record_list):
+        print("Record ID not found.")
+        return
+
+    # If the record exists, display the record details
+    print(f"\nRECORD ID: {record_id}")
+    display_record(record_list[index])
+    print()
 
 # TODO: Implement the main function for the program logic
 # ASSIGNED TO: All
