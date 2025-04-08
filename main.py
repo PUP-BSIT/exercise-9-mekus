@@ -91,7 +91,8 @@ def main():
             case 4: 
                 pass
             case 5:
-                pass
+                # Call search_record()
+                search_record(record_list)
             case 6:
                 break
             case _:
