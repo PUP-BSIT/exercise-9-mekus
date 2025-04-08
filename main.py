@@ -75,7 +75,6 @@ def search_record(record_list):
     # If the record exists, display the record details
     print(f"\nRECORD ID: {record_id}")
     display_record(record_list[index])
-    print()
 
 # TODO: Implement the main function for the program logic
 # ASSIGNED TO: All
