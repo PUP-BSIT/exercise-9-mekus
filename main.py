@@ -63,7 +63,8 @@ def main():
                 # Call list_all_records()
                 list_all_records(record_list) 
             case 2:
-                pass
+                # Call add_record()
+                add_record(record_list)
             case 3:
                 pass
             case 4: 
