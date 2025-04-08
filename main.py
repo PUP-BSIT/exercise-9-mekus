@@ -11,27 +11,20 @@ def list_all_records(record_list):
 
 # Function to add a new record to the list
 def add_record(record_list):
-    print("\n--- Add a New Record ---") # Display section title
-    
-    # Get user input for each field of the record
-    agent = input("Enter Agent: ")
-    match_result = input("Enter Match Result (Won/Lose): ")
-    kills = input("Enter Kills: ")
-    deaths = input("Enter Deaths: ")
-    assists = input("Enter Assists: ")
+    print("\n--- Add a New Record ---")  # Display section title
 
-    # Create a new record using the input values
-    record = {
-        "agent": agent,
-        "match_result": match_result,
-        "kills": kills,
-        "deaths": deaths,
-        "assists": assists
-    }
+    # Define the fields for the record
+    record_keys = ["agent", "match_result", "kills", "deaths", "assists"]
+    record = {}
+
+    # Loop through each field and prompt user input
+    for item in record_keys:
+        user_input = input(f"Enter {item.replace('_', ' ').title()}: ")
+        record[item] = user_input
 
     # Append the new record to the main record list
-    record_list.append(record) 
-    print("Record added successfully!") # Confirmation message
+    record_list.append(record)
+    print("Record added successfully!")  # Confirmation message
     
 # Function to update an existing record
 def update_record(record_list):
