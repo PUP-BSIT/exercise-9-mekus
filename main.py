@@ -22,11 +22,11 @@ def add_record(record_list):
 
     # Create a new record using the input values
     record = {
-        "Agent": agent,
-        "Match Result": match_result,
-        "Kills": kills,
-        "Deaths": deaths,
-        "Assists": assists
+        "agent": agent,
+        "match_result": match_result,
+        "kills": kills,
+        "deaths": deaths,
+        "assists": assists
     }
 
     # Append the new record to the main record list
