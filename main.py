@@ -1,5 +1,13 @@
-# TODO: Implement a function to list all records
-# ASSIGNED TO: Dann Kyle Jundam
+# Function to display a record
+def display_record(record):
+    for key, value in record.items():
+        print(f"\t{key}: {value}")
+
+# Function to iterate and display record_list
+def list_all_records(record_list):
+    for i in range(len(record_list)):
+        print(f"RECORD ID: {i + 1}")  # Display the record ID of an item
+        display_record(record_list[i])
 
 # TODO: Implement a function to add a record 
 # ASSIGNED TO: Rollan Dazo
