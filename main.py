@@ -49,8 +49,32 @@ def update_record(record_list):
         user_input = input(f"Enter {key.replace('_', ' ').title()}: ")
         selected_record[key] = user_input
 
-# TODO: Implement a function to delete a record 
-# ASSIGNED TO: Jermaine Raz ehl Agulto
+# Function to delete a record by ID
+def delete_record(record_list):
+    print("\n--- Delete a Record by ID ---")  # Display section title
+
+    # Prompt user to input record ID
+    record_id = int(input("Enter record ID to delete: "))
+
+    # Convert record ID to index
+    index = record_id - 1
+
+    # Check if the index is out of range
+    if index < 0 or index >= len(record_list):
+        print("Record ID not found.")
+        return
+
+    # Confirm deletion
+    confirm = input(
+        f"Do you want to delete record ID {record_id}? (yes/no): "
+        ).lower()
+    if confirm == "yes":
+        # Remove the record from the list
+        del record_list[index]
+        print("Record deleted successfully!")
+    else:
+        print("Deletion canceled.")
+
 
 def search_record(record_list):
     print("\n--- Search a Record by ID ---") # Display section title
