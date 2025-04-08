@@ -39,7 +39,8 @@ def main():
 
         match choice:
             case 1:
-                pass
+                # Call list_all_records()
+                list_all_records(record_list) 
             case 2:
                 pass
             case 3:
