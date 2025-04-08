@@ -45,11 +45,6 @@ def search_record(record_list):
     # Prompt user to enter a record ID to search
     record_id = int(input("Enter the record ID to search: "))
 
-    # Check if the input is a number
-    if not record_id:
-        print("Invalid input! Please enter a valid number.")
-        return
-
     # Convert record ID to index
     index = record_id - 1
 
