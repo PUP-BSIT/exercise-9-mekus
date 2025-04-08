@@ -101,7 +101,7 @@ def main():
                 # Call add_record()
                 add_record(record_list)
             case 3:
-                pass
+                update_record(record_list)
             case 4: 
                 pass
             case 5:
