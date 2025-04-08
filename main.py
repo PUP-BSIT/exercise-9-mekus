@@ -33,8 +33,27 @@ def add_record(record_list):
     record_list.append(record) 
     print("Record added successfully!") # Confirmation message
     
-# TODO: Implement a function to update a record
-# ASSIGNED TO: John Albert Olazo
+# Function to update an existing record
+def update_record(record_list):
+    print("\n---- Update a Record by ID ---")  #Display section title
+    
+    # Prompt user to input record ID
+    record_id = int(input("Enter record ID: "))
+    
+    # Convert record ID to index
+    index = record_id - 1
+    
+    # Checks if the index is out of range
+    if index < 0 or index >= len(record_list):
+        print("Record ID not found")
+        return 
+    
+    # Assigning the selected record to a variable
+    selected_record = record_list[index]
+    
+    # Iterates the keys in the selected record
+    for key in selected_record:
+        selected_record[key] = input(f"Enter {key.replace('_', ' ')}: ")
 
 # TODO: Implement a function to delete a record 
 # ASSIGNED TO: Jermaine Raz ehl Agulto
