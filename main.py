@@ -6,7 +6,11 @@ def display_record(record):
 # Function to iterate and display record_list
 def list_all_records(record_list):
     print("\n --- Display Records ---")
-    
+
+    if len(record_list) == 0:
+        print("No records found. Add a record first")
+        return
+
     for i in range(len(record_list)):
          print(f"RECORD ID: {i + 1}")  # Display the record ID of an item
          display_record(record_list[i])
