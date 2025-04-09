@@ -154,6 +154,7 @@ def main():
     # Infinite loop to keep the program running until the user chooses to exit
     while True:
         print(
+            "\n --- Valorant Records ---"
             "\n [1] List All"
             "\n [2] Add"
             "\n [3] Update"
