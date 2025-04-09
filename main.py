@@ -49,18 +49,14 @@ def input_fields(record):
 # Function to add a new record to the list
 def add_record(record_list):
     print("\n--- Add a New Record ---")  # Display section title
+    
+    # Create an empty dictionary for the new record
+    record = {}  
 
-    # Define the fields for the record
-    record_keys = ["agent", "match_result", "kills", "deaths", "assists"]
-    record = {}
+    # Use the input fields function to get validated user input
+    input_fields(record)  
 
-    # Loop through each field and prompt user input
-    for item in record_keys:
-        user_input = input(f"Enter {item.replace('_', ' ').title()}: ")
-        record[item] = user_input
-
-    # Append the new record to the main record list
-    record_list.append(record)
+    record_list.append(record)  # Add the validated record to the list
     print("Record added successfully!")  # Confirmation message
     
 # Function to retrieve a record by ID
