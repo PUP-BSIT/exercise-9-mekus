@@ -13,7 +13,7 @@ def list_all_records(record_list):
         return
 
     for i in range(len(record_list)):
-         print(f"RECORD ID: {i + 1}")  # Display the record ID of an item
+         print(f"RECORD INDEX: {i}")  # Display the record index of an item
          display_record(record_list[i])
 
 # Function to input fields for a new record
@@ -59,35 +59,33 @@ def add_record(record_list):
     record_list.append(record)  # Add the validated record to the list
     print("Record added successfully!")  # Confirmation message
     
-# Function to retrieve a record by ID
-def get_record_by_id(record_list, action):
-    print(f"\n--- {action} a Record by ID ---")  #Display section title
+# Function to retrieve a record by index
+def get_record_by_index(record_list, action):
+    print(f"\n--- {action} a Record by index ---")  #Display section title
     
-    # Prompt user to input record ID
+    # Prompt user to input record index
     while True:
-        record_id = input(f"Enter record ID to {action.lower()}: ")
-        if record_id.isdigit():
-            record_id = int(record_id)
+        record_index = input(f"Enter record index to {action.lower()}: ")
+        if record_index.isdigit():
+            record_index = int(record_index)
             break
         
-        print("Invalid input. Please enter a valid record ID.")
-        
-    index = record_id - 1  # Convert record ID to index
+        print("Invalid input. Please enter a valid record index.")
     
     # Checks if the index is out of range
-    if index < 0 or index >= len(record_list):
-        print("Record ID not found")
+    if record_index < 0 or record_index >= len(record_list):
+        print("Record index not found")
         
-        # Return None and record ID if not found
-        return None, record_id
+        # Return None and record index if not found
+        return None, record_index
     
-    # Return the selected record (dictionary) and record ID (int)
-    return record_list[index], record_id
+    # Return the selected record (dictionary) and record index (int)
+    return record_list[record_index], record_index
     
 # Function to update an existing record
 def update_record(record_list):
     # Assigning the selected record to a variable
-    selected_record, _ = get_record_by_id(record_list, "Update")
+    selected_record, _ = get_record_by_index(record_list, "Update")
     
     # Exit the function if selected_record is empty
     if not selected_record:
@@ -98,12 +96,12 @@ def update_record(record_list):
         
     print("Record updated successfully")  # Confirmation message
 
-# Function to delete a record by ID
+# Function to delete a record by index
 def delete_record(record_list):
-    # Retrieve the record and ID from the user input
-    selected_record, record_id = get_record_by_id(record_list, "Delete")
+    # Retrieve the record and index from the user input
+    selected_record, record_index = get_record_by_index(record_list, "Delete")
     
-    # Exit the function if the record ID is not found
+    # Exit the function if the record index is not found
     if not selected_record:
         return
     
@@ -111,7 +109,7 @@ def delete_record(record_list):
     while True:
         # Confirm deletion
         confirm = input(
-            f"Do you want to delete record ID {record_id}? (yes/no): "
+            f"Do you want to delete record index {record_index}? (yes/no): "
         ).lower()
         
         # Check if the input is valid
@@ -125,20 +123,20 @@ def delete_record(record_list):
         print ("Deletion canceled.")
         return 
     
-    del record_list[record_id - 1]  # delete it from the list
+    del record_list[record_index]  # delete it from the list
     print ("Record deleted successfully!")
 
 # Function to search a record
 def search_record(record_list):
-    # Retrieve the record and ID from the user input
-    selected_record, record_id = get_record_by_id(record_list, "Search")
+    # Retrieve the record and index from the user input
+    selected_record, record_index = get_record_by_index(record_list, "Search")
     
-    # Exit the function if the record ID is not found
+    # Exit the function if the record index is not found
     if not selected_record:
         return
 
     # Display the record details
-    print(f"\nRECORD ID: {record_id}")
+    print(f"\nRECORD INDEX: {record_index}")
     display_record(selected_record)
 
 # Main function to run the program
