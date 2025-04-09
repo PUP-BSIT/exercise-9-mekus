@@ -97,17 +97,11 @@ def update_record(record_list):
 
 # Function to delete a record by ID
 def delete_record(record_list):
-    print("\n--- Delete a Record by ID ---")  # Display section title
-
-    # Prompt user to input record ID
-    record_id = int(input("Enter record ID to delete: "))
-
-    # Convert record ID to index
-    index = record_id - 1
-
-    # Check if the index is out of range
-    if index < 0 or index >= len(record_list):
-        print("Record ID not found.")
+    # Retrieve the record and ID from the user input
+    selected_record, record_id = get_record_by_id(record_list, "Delete")
+    
+    # Exit the function if the record ID is not found
+    if not selected_record:
         return
     
     VALID_CONFIRM = ("yes", "no")  # Define valid confirmation responses
@@ -126,7 +120,7 @@ def delete_record(record_list):
         print ("Deletion canceled.")
         return 
     
-    del record_list[index]  # delete it from the list
+    del record_list[record_id - 1]  # delete it from the list
     print ("Record deleted successfully!")
 
 # Function to search a record
