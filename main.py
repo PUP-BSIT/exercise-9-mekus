@@ -28,7 +28,7 @@ def add_record(record_list):
     
 # Function to retrieve a record by ID
 def get_record_by_id(record_list, action):
-    print(f"--- {action} a Record by ID ---")  #Display section title
+    print(f"\n--- {action} a Record by ID ---")  #Display section title
     
     # Prompt user to input record ID
     record_id = int(input(f"Enter record ID to {action.lower()}: "))
