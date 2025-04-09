@@ -17,6 +17,7 @@ def list_all_records(record_list):
          print(f"\nRECORD INDEX: {index}")
          display_record(record_list[index])
 
+# Function to input interger fields
 def input_integer_field(key):
     while True:
         try:
