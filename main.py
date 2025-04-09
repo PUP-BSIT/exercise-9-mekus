@@ -156,8 +156,10 @@ def main():
                 # Call add_record()
                 add_record(record_list)
             case 3:
+                # Call update_record()
                 update_record(record_list)
             case 4: 
+                # Call delete_record()
                 delete_record(record_list)
             case 5:
                 # Call search_record()
