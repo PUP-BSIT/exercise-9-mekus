@@ -90,14 +90,10 @@ def delete_record(record_list):
     print ("Record deleted successfully!")
    
 def search_record(record_list):
-    
     # Retrieve the record and ID from the user input
-    selected_record = get_record_by_id(record_list, "Search")
-
-    # Unpack the selected_record into its details and ID
-    selected_record, record_id = selected_record
+    selected_record, record_id = get_record_by_id(record_list, "Search")
     
-     # Exit the function if the record ID is not found
+    # Exit the function if the record ID is not found
     if not selected_record:
         return
 
