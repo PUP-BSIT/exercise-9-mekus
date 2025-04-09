@@ -90,22 +90,20 @@ def delete_record(record_list):
     print ("Record deleted successfully!")
    
 def search_record(record_list):
-    print("\n--- Search a Record by ID ---") # Display section title
     
-    # Prompt user to enter a record ID to search
-    record_id = int(input("Enter the record ID to search: "))
+    # Retrieve the record and ID from the user input
+    selected_record = get_record_by_id(record_list, "Search")
 
-    # Convert record ID to index
-    index = record_id - 1
-
-    # Check if the index is out of range
-    if index < 0 or index >= len(record_list):
-        print("Record ID not found.")
+    # Unpack the selected_record into its details and ID
+    selected_record, record_id = selected_record
+    
+     # Exit the function if the record ID is not found
+    if not selected_record:
         return
 
-    # If the record exists, display the record details
+    # Display the record details
     print(f"\nRECORD ID: {record_id}")
-    display_record(record_list[index])
+    display_record(selected_record)
 
 # TODO: Implement the main function for the program logic
 # ASSIGNED TO: All
