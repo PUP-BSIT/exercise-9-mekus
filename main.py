@@ -85,9 +85,7 @@ def update_record(record_list):
         return
     
     # Loops through each fields and prompt user input
-    for key in selected_record:
-        user_input = input(f"Enter {key.replace('_', ' ').title()}: ")
-        selected_record[key] = user_input
+    input_fields(selected_record)
         
     print("Record updated successfully")  # Confirmation message
 
