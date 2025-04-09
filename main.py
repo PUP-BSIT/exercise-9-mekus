@@ -109,14 +109,23 @@ def delete_record(record_list):
     if index < 0 or index >= len(record_list):
         print("Record ID not found.")
         return
-
-    # Confirm deletion
-    confirm = input (
-        f"Do you want to delete record ID {record_id}? (yes/no): "
-        )
-    if confirm.lower() != "yes":
+    
+    VALID_CONFIRM = ("yes", "no")  # Define valid confirmation responses
+    while True:
+        # Confirm deletion
+        confirm = input(
+            f"Do you want to delete record ID {record_id}? (yes/no): "
+        ).lower()
+        
+        if confirm in VALID_CONFIRM:
+            break
+        
+        print("Invalid input. Please enter 'yes' or 'no'.")
+    
+    if confirm != "yes":
         print ("Deletion canceled.")
         return 
+    
     del record_list[index]  # delete it from the list
     print ("Record deleted successfully!")
 
