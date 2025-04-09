@@ -44,21 +44,11 @@ def get_record_by_id(record_list, action):
     
 # Function to update an existing record
 def update_record(record_list):
-    print("\n---- Update a Record by ID ---")  #Display section title
-    
-    # Prompt user to input record ID
-    record_id = int(input("Enter record ID to update: "))
-    
-    # Convert record ID to index
-    index = record_id - 1
-    
-    # Checks if the index is out of range
-    if index < 0 or index >= len(record_list):
-        print("Record ID not found")
-        return 
-    
     # Assigning the selected record to a variable
-    selected_record = record_list[index]
+    selected_record, _ = get_record_by_id(record_list, "Update")
+    
+    if not selected_record:
+        return
     
     # Iterates the keys in the selected record
     for key in selected_record:
