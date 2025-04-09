@@ -48,6 +48,8 @@ def update_record(record_list):
     for key in selected_record:
         user_input = input(f"Enter {key.replace('_', ' ').title()}: ")
         selected_record[key] = user_input
+        
+    print("Record updated successfully")  # Confirmation message
 
 # Function to delete a record by ID
 def delete_record(record_list):
