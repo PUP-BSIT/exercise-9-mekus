@@ -31,7 +31,7 @@ def update_record(record_list):
     print("\n---- Update a Record by ID ---")  #Display section title
     
     # Prompt user to input record ID
-    record_id = int(input("Enter record ID: "))
+    record_id = int(input("Enter record ID to update: "))
     
     # Convert record ID to index
     index = record_id - 1
