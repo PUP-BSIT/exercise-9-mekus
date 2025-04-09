@@ -89,7 +89,8 @@ def delete_record(record_list):
         return 
     del record_list[index]  # delete it from the list
     print ("Record deleted successfully!")
-   
+
+# Function to search a record
 def search_record(record_list):
     # Retrieve the record and ID from the user input
     selected_record, record_id = get_record_by_id(record_list, "Search")
@@ -102,6 +103,7 @@ def search_record(record_list):
     print(f"\nRECORD ID: {record_id}")
     display_record(selected_record)
 
+# Main function to run the program
 def main():
     record_list = []
 
@@ -135,4 +137,5 @@ def main():
             case _:
                 print("invalid choice!")
 
+# Execute the main function
 main()
