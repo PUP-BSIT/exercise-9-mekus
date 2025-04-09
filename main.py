@@ -86,6 +86,11 @@ def get_record_by_index(record_list, action):
     
 # Function to update an existing record
 def update_record(record_list):
+    # Check if the record_list is empty
+    if len(record_list) == 0:
+        print("\nNo records found. Add a record first")
+        return
+     
     # Assigning the selected record to a variable
     selected_record, _ = get_record_by_index(record_list, "Update")
     
