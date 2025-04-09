@@ -67,11 +67,12 @@ def get_record_by_id(record_list, action):
     while True:
         record_id = input(f"Enter record ID to {action.lower()}: ")
         if record_id.isdigit():
+            record_id = int(record_id)
             break
         
         print("Invalid input. Please enter a valid record ID.")
         
-    index = int(record_id) - 1  # Convert record ID to index
+    index = record_id - 1  # Convert record ID to index
     
     # Checks if the index is out of range
     if index < 0 or index >= len(record_list):
