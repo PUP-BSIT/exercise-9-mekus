@@ -1,13 +1,13 @@
 # Function to display a record
 def display_record(record):
     for key, value in record.items():
-        print(f"\t{key}: {value}")
+        print(f"----{key}: {value}")
 
 # Function to iterate and display record_list
 def list_all_records(record_list):
-    for i in range(len(record_list)):
-        print(f"RECORD ID: {i + 1}")  # Display the record ID of an item
-        display_record(record_list[i])
+     for i in range(len(record_list)):
+         print(f"RECORD ID: {i + 1}")  # Display the record ID of an item
+         display_record(record_list[i])
 
 # Function to add a new record to the list
 def add_record(record_list):
