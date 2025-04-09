@@ -191,7 +191,7 @@ def main():
             case 6:
                 break
             case _:
-                print("invalid choice!")
+                print("Invalid choice!")
 
 # Execute the main function
 main()
