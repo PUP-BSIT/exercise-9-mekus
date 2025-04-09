@@ -77,6 +77,8 @@ def get_record_by_id(record_list, action):
     # Checks if the index is out of range
     if index < 0 or index >= len(record_list):
         print("Record ID not found")
+        
+        # Return None and record ID if not found
         return None, record_id
     
     # Return the selected record (dictionary) and record ID (int)
@@ -112,11 +114,13 @@ def delete_record(record_list):
             f"Do you want to delete record ID {record_id}? (yes/no): "
         ).lower()
         
+        # Check if the input is valid
         if confirm in VALID_CONFIRM:
             break
         
         print("Invalid input. Please enter 'yes' or 'no'.")
     
+    # Checks if the user confirmed deletion
     if confirm != "yes":
         print ("Deletion canceled.")
         return 
@@ -139,8 +143,9 @@ def search_record(record_list):
 
 # Main function to run the program
 def main():
-    record_list = []
+    record_list = []  # Initialize an empty list to store records
 
+    # Infinite loop to keep the program running until the user chooses to exit
     while True:
         print(
             "\n [1] List All"
@@ -150,8 +155,11 @@ def main():
             "\n [5] Search"
             "\n [6] Exit"
         )
+        
+        # Prompt user to select an option
         choice = int(input("Enter your choice: "))
 
+        # Check the user's choice and call the corresponding function
         match choice:
             case 1:
                 # Call list_all_records()
