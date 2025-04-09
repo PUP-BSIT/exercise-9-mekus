@@ -162,7 +162,13 @@ def main():
         )
         
         # Prompt user to select an option
-        choice = int(input("Enter your choice: "))
+        try:
+            # Try converting the user's input to an integer for menu selection
+            choice = int(input("Enter your choice: "))
+        except ValueError:
+            # Handle the case where the input is not a valid integer
+            print("Invalid input. Please enter a number.")
+            continue
 
         # Check the user's choice and call the corresponding function
         match choice:
