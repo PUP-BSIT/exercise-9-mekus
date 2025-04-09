@@ -5,8 +5,9 @@ def display_record(record):
 
 # Function to iterate and display record_list
 def list_all_records(record_list):
-    print("\n --- Display Records ---")
+    print("\n --- Display Records ---") # Display section title
 
+    # Checks if the record_list is empty
     if len(record_list) == 0:
         print("No records found. Add a record first")
         return
