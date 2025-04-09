@@ -13,7 +13,8 @@ def list_all_records(record_list):
         return
 
     for index in range(len(record_list)):
-         print(f"RECORD INDEX: {index}")  # Display the record index of an item
+         # Display the record index of an item
+         print(f"\nRECORD INDEX: {index}")
          display_record(record_list[index])
 
 def input_integer_field(key):
