@@ -37,7 +37,7 @@ def get_record_by_id(record_list, action):
     # Checks if the index is out of range
     if index < 0 or index >= len(record_list):
         print("Record ID not found")
-        return 
+        return None, record_id
     
     # Return the selected record (dictionary) and record ID (int)
     return record_list[index], record_id
