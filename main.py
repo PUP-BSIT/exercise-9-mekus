@@ -16,6 +16,16 @@ def list_all_records(record_list):
          print(f"RECORD INDEX: {index}")  # Display the record index of an item
          display_record(record_list[index])
 
+def input_integer_field(key):
+    while True:
+        try:
+            # Prompt user to input an integer field
+            user_input = int(input(f"Enter {key}: ").strip())
+            return user_input
+        except ValueError:
+            print(f"Invalid input. Please enter a valid number for {key}.")
+            continue
+
 # Function to input fields for a new record
 def input_fields(record):
     # Prompt user to input Agent name
@@ -35,16 +45,8 @@ def input_fields(record):
     
     INTEGER_FIELDS = ("kills", "deaths", "assists")  # Define integer fields
     for key in INTEGER_FIELDS:
-        while True:
-            # Prompt user to input kills, deaths, or assists
-            user_input = input(f"Enter {key.title()}: ").strip()
-            
-            # Check if the input is a digit
-            if user_input.isdigit():
-                record[key] = int(user_input)
-                break
-            
-            print(f"Invalid input. Please enter a valid number for {key}.")
+        # Call the function to get integer input
+        record[key] = input_integer_field(key)  
             
 # Function to add a new record to the list
 def add_record(record_list):
