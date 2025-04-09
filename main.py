@@ -16,6 +16,36 @@ def list_all_records(record_list):
          print(f"RECORD ID: {i + 1}")  # Display the record ID of an item
          display_record(record_list[i])
 
+# Function to input fields for a new record
+def input_fields(record):
+    # Prompt user to input Agent name
+    record["agent"] = input("Enter Agent: ").strip().capitalize()
+    
+    VALID_MATCH_RESULT = ("won", "lost")  # Define valid match results
+    while True:
+        # Prompt user to input match result
+        user_input = input("Enter Match Result (Won/Lost): ").strip().lower()
+        
+        # Check if the input is valid
+        if user_input in VALID_MATCH_RESULT:
+            record["match_result"] = user_input.capitalize()
+            break
+        
+        print("Invalid input. Please enter 'Won' or 'Lost'.")
+    
+    INTEGER_FIELDS = ("kills", "deaths", "assists")  # Define integer fields
+    for key in INTEGER_FIELDS:
+        while True:
+            # Prompt user to input kills, deaths, or assists
+            user_input = input(f"Enter {key.title()}: ").strip()
+            
+            # Check if the input is a digit
+            if user_input.isdigit():
+                record[key] = int(user_input)
+                break
+            
+            print(f"Invalid input. Please enter a valid number for {key}.")
+            
 # Function to add a new record to the list
 def add_record(record_list):
     print("\n--- Add a New Record ---")  # Display section title
