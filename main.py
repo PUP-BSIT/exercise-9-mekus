@@ -26,6 +26,22 @@ def add_record(record_list):
     record_list.append(record)
     print("Record added successfully!")  # Confirmation message
     
+# Function to retrieve a record by ID
+def get_record_by_id(record_list, action):
+    print(f"--- {action} a Record by ID ---")  #Display section title
+    
+    # Prompt user to input record ID
+    record_id = int(input(f"Enter record ID to {action.lower()}"))
+    index = record_id - 1  # Convert record ID to index
+    
+    # Checks if the index is out of range
+    if index < 0 or index >= len(record_list):
+        print("Record ID not found")
+        return 
+    
+    # Return the selected record (dictionary) and record ID (int)
+    return record_list[index], record_id
+    
 # Function to update an existing record
 def update_record(record_list):
     print("\n---- Update a Record by ID ---")  #Display section title
