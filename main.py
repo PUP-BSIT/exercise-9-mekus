@@ -31,7 +31,7 @@ def get_record_by_id(record_list, action):
     print(f"--- {action} a Record by ID ---")  #Display section title
     
     # Prompt user to input record ID
-    record_id = int(input(f"Enter record ID to {action.lower()}"))
+    record_id = int(input(f"Enter record ID to {action.lower()}: "))
     index = record_id - 1  # Convert record ID to index
     
     # Checks if the index is out of range
