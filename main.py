@@ -54,10 +54,11 @@ def update_record(record_list):
     # Assigning the selected record to a variable
     selected_record, _ = get_record_by_id(record_list, "Update")
     
+    # Exit the function if selected_record is empty
     if not selected_record:
         return
     
-    # Iterates the keys in the selected record
+    # Loops through each fields and prompt user input
     for key in selected_record:
         user_input = input(f"Enter {key.replace('_', ' ').title()}: ")
         selected_record[key] = user_input
