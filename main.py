@@ -12,9 +12,9 @@ def list_all_records(record_list):
         print("No records found. Add a record first")
         return
 
-    for i in range(len(record_list)):
-         print(f"RECORD INDEX: {i}")  # Display the record index of an item
-         display_record(record_list[i])
+    for index in range(len(record_list)):
+         print(f"RECORD INDEX: {index}")  # Display the record index of an item
+         display_record(record_list[index])
 
 # Function to input fields for a new record
 def input_fields(record):
