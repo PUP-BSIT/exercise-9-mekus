@@ -82,9 +82,6 @@ def delete_record(record_list):
     del record_list[index]  # delete it from the list
     print ("Record deleted successfully!")
    
-        
-
-
 def search_record(record_list):
     print("\n--- Search a Record by ID ---") # Display section title
     
