@@ -102,8 +102,6 @@ def search_record(record_list):
     print(f"\nRECORD ID: {record_id}")
     display_record(selected_record)
 
-# TODO: Implement the main function for the program logic
-# ASSIGNED TO: All
 def main():
     record_list = []
 
